@@ -1,0 +1,41 @@
+.header{
+    &__wpr{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+    &__ham{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        gap: 5px;
+        &-bars{
+            position: relative;
+            overflow: hidden;
+            width: 28px;
+            div{
+                width: 28px;
+                display: block;
+                height: 1.5px;
+                margin: 5px 0;
+                background-color: #fff;
+                opacity: 1;
+                transition: all 0.5s cubic-bezier(0.3, 1.4, 0.7, 1);
+            }
+        }
+        &:hover{
+            .header__ham-bars{
+                div:nth-child(2){
+                    width: 15px;
+                }
+            }
+        }
+        span{
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.1rem;
+        }
+    }
+}
