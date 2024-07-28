@@ -1,9 +1,16 @@
 .header{
     &__wpr{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         padding: 20px 0;
+        flex-wrap: wrap;
+        gap: 20px 80px;
+        position: relative;
+        @include mq("phablet") {
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
     }
     &__ham{
         display: flex;
@@ -14,6 +21,7 @@
             position: relative;
             overflow: hidden;
             width: 28px;
+            z-index: 99;
             div{
                 width: 28px;
                 display: block;
@@ -31,11 +39,68 @@
                 }
             }
         }
+        &.active{
+            .header__ham-bars{
+                div:nth-child(1){
+                    transform: translateY(5px) rotate(45deg);
+                    width: 24px;
+                }
+                div:nth-child(2){
+                    opacity: 0;
+                }
+                div:nth-child(3){
+                    transform: translateY(-8px) rotate(-45deg);
+                    width: 24px;
+                }
+            }
+            span::after{
+                content: attr(data-close);
+            }
+        }
         span{
             color: #fff;
             font-size: 1.4rem;
+            line-height: calc( 21 / 14);
             font-weight: 700;
-            letter-spacing: 0.1rem;
+            letter-spacing: 0.025em;
+            text-transform: uppercase;
+            z-index: 99;
+            &::after{
+                content: attr(data-open);
+                display: block;
+            }
+        }
+    }
+    &__logo{
+        order: 2;
+        @include mq("phablet"){
+            order: unset;
+        }
+    }
+    &__moto{
+        color: #fff;
+        font-size: 1.4rem;
+        line-height: calc( 21 / 14);
+        font-weight: 700;
+        letter-spacing: 0.025em;
+        text-transform: uppercase;
+    }
+    &__nav{
+        position: absolute;
+        display: none;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        left: 0;
+        background-color: $color-primary;
+        &.show{
+            display: block;
+        }
+        &-wpr{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 110px 0 40px;
         }
     }
 }
