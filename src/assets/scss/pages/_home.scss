@@ -1,0 +1,107 @@
+.section{
+    &__wpr{
+        margin-bottom: 80px;
+        &:first-of-type{
+            margin-top: 80px;
+        }
+    }
+    &-video{
+        position: relative;
+        &__movie{
+            width: 100%;
+            height: auto;
+        }
+        &__content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $color-white;
+            &-ttl{
+                text-align: center;
+                font-size: 2.6rem;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+            &-txt{
+                font-size: 1.4rem;
+                line-height: calc( 21 / 14);
+                font-weight: 400;
+                letter-spacing: 0.025em;
+                text-align: justify;
+            }
+        }
+    }
+
+    // welcome
+    &-welcome{
+        &__row{
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            flex-wrap: wrap;
+            @include mq("phablet") {
+                flex-wrap: nowrap;
+            }
+        }
+        &__col{
+            width: 100%;
+            &:first-of-type{
+                background-color: $color-black2;
+                padding: 40px 20px;
+            }
+            @include mq("phablet") {
+                width: 50%;
+            }
+            .img-fluid{
+                height: 100%;
+            }
+
+        }
+        &__ttl{
+            font-size: 2rem;
+            line-height: calc( 27 / 18);
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            text-transform: uppercase;
+            color: $color-white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        &__subttl{
+            font-size: 1.8rem;
+            line-height: calc( 27 / 18);
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            color: $color-white;
+            text-align: justify;
+        }
+        &__txt{
+            font-size: 1.4rem;
+            line-height: calc( 21 / 14);
+            font-weight: 400;
+            letter-spacing: 0.025em;
+            text-align: justify;
+            color: $color-white;
+        }
+        &__hr{
+            height: 1px;
+            background-color: $color-white;
+            width: 35%;
+            margin-bottom: 10px;
+        }
+    }
+
+    &-allure{
+        &__ttl{
+            font-size: 2.8rem;
+            line-height: calc( 27 / 18);
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            text-transform: capitalize;
+            color: $color-white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+}

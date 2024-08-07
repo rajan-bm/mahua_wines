@@ -1,5 +1,62 @@
 .footer {
-    //for footer position bottom
+    background-color: $color-black2;
+    &__wpr{
+        padding: 50px 0;
+    }
+    &__row{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px 20px;
+        @include mq("desktop") {
+            flex-wrap: nowrap;
+        }
+    }
+    &__col{
+        height: 100%;
+        &-ttl{
+            font-size: 1.8rem;
+            line-height: calc( 27 / 18);
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            text-transform: uppercase;
+            color: $color-white;
+            margin-bottom: 30px;
+        }
+        &-txt{
+            font-size: 1.4rem;
+            line-height: calc( 21 / 14);
+            font-weight: 400;
+            letter-spacing: 0.025em;
+            color: $color-white;
+            margin-bottom: 20px;
+        }
+        &-list{
+            margin-bottom: 20px;
+        }
+        &-link{
+            display: block;
+            font-size: 1.6rem;
+            line-height: calc( 21 / 14);
+            font-weight: 400;
+            letter-spacing: 0.025em;
+            color: $color-white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            &:hover{
+                color: $color-secondary;
+            }
+        }
 
-    // margin-top: auto;
+        &.-flex{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+    }
+
+    .btn-primary{
+        text-align: left;
+    }
 }

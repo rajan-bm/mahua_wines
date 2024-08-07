@@ -58,7 +58,7 @@
             }
         }
         span{
-            color: #fff;
+            color: $color-white;
             font-size: 1.4rem;
             line-height: calc( 21 / 14);
             font-weight: 700;
@@ -84,6 +84,11 @@
         font-weight: 700;
         letter-spacing: 0.025em;
         text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.3s ease-in;
+        &:hover{
+            color: $color-secondary;
+        }
     }
     &__nav{
         position: absolute;
@@ -101,6 +106,27 @@
             justify-content: space-between;
             align-items: center;
             padding: 110px 0 40px;
+            flex-direction: column;
+            @include mq("phablet") {
+                flex-direction: row;
+            }
+            @include mq("tablet") {
+                padding: 140px 70px 40px;
+            }
+        }
+        &-titles{
+            width: 100%;
+            @include mq("phablet") {
+                width: 60%;
+            }
+        }
+        &-contact{
+            text-align: left;
+            width: 100%;
+            @include mq("phablet") {
+                width: 40%;
+                text-align: center;
+            }
         }
     }
 }
